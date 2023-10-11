@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad area de figura 1010 </title>
+</head>
+
+<body>
+  <h3>Área de una figura geometríca</h3>
+  <div class="col-md-4">
+    <input type="number" id="base" placeholder="Base" class="form-control">
+    <input type="number" id="altura" placeholder="Altura" class="form-control">
+    <button id="calcular" class="btn">Calcular área</button>
+  </div>
+  <div class="col-md-4">
+    <label>Área: </label>
+    <div id="areaResultado">
+    </div>
+    <br>
+  </div>
+  <script>
+
+    let codigoVariable = prompt("Que opcion deseas? 1) Triangulo, 2)Cuadrado, 3)Rectangulo");
+    let obtenerArea =
+      function (params) {
+
+      }
+
+    switch (codigoVariable) {
+      case "1":
+        console.log("triangulo")
+        obtenerArea = () => {
+          var areaResultado = document.getElementById("areaResultado");
+          var b = parseInt(document.getElementById("base").value);
+          var h = parseInt(document.getElementById("altura").value);
+
+          var area = (b * h) / 2;
+
+          areaResultado.innerHTML = "" + area;
+        }
+        break;
+
+      case "2":
+        obtenerArea = () => {
+          var areaResultado = document.getElementById("areaResultado");
+          var l = parseInt(document.getElementById("base").value);
+          var l = parseInt(document.getElementById("altura").value);
+
+          var area = (l * l);
+          areaResultado.innerHTML = "" + area;
+        }
+        break;
+      case "3":
+        obtenerArea = () => {
+          var areaResultado = document.getElementById("areaResultado");
+          var b = parseInt(document.getElementById("base").value);
+          var h = parseInt(document.getElementById("altura").value);
+
+          var area = (b * h);
+          areaResultado.innerHTML = "" + area;
+        }
+        break;
+      default:
+        window.alert("Debes seleccionar un numero válido. Estas son las opiones 1) Triangulo, 2)Cuadrado, 3)Rectangulo");
+    }
+    console.log(codigoVariable)
+    document.getElementById("calcular").addEventListener("click", function () {
+      obtenerArea();
+    });
+
+  </script>
+</body>
+
+</html>
